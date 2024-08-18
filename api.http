@@ -1,0 +1,36 @@
+GET http://localhost:1234/movies
+
+### peli por id
+
+GET http://localhost:1234/movies/241bf55d-b649-4109-af7c-0e6890ded3fc
+
+### todas las pelis por género
+
+GET http://localhost:1234/movies?genre=acTion
+
+### Crear una peli
+
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title" : "Deadpool",
+    "year" : 2024,
+    "director" : "Marcos Schloymann",
+    "duration" : 155,
+    "poster" : "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+    "genre" :  [
+      "Action"
+    ],
+    "rate" : 10
+}
+
+### Actualizar una peli
+
+PATCH http://localhost:1234/movies/241bf55d-b649-4109-af7c-0e6890ded3fc
+Content-Type: application/json
+
+{
+  "year": 1993
+}
+
